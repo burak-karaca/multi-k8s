@@ -11,8 +11,8 @@ before_install:
   - source $HOME/google-cloud-sdk/path.bash.inc # look at the default install dic and source the file
   - gcloud components update kubectl 
   - gcloud auth activate-service-account --key-file service-account.json 
-  - gcloud config set project bubbly-hope-316512 #which project we want to work on
-  - gcloud config set compute/zone us-central1-c #defining zone
+  - gcloud config set project multi-k8s-319212 #which project we want to work on
+  - gcloud config set compute/zone europe-central2-c #defining zone
   - gcloud container clusters get-credentials multi-cluster #which cluster its working with
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t burakaraca/react-test -f ./client/Dockerfile.dev ./client
